@@ -1,4 +1,3 @@
-from gcode_formats import texture_and_weld
 import math
 import re
 from helpers.templates import *
