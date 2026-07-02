@@ -1,3 +1,4 @@
+
 import math
 import re
 from helpers.templates import *
@@ -40,8 +41,8 @@ class FabriSlicer:
         span_x_mm = abs(b["max_x"] - b["min_x"])
         span_y_mm = abs(b["max_y"] - b["min_y"])
         span_z_mm = abs(b["max_z"] - b["min_z"])
-        print(b["max_z"], b["min_z"])
-        print(span_z_mm)
+        # print(b["max_z"], b["min_z"])
+        # print(span_z_mm)
 
         pitch_mm = 12.7 - (self.overlap_imp * 25.4)
         weldlines = (
@@ -215,7 +216,7 @@ class FabriSlicer:
             self._extract_mesh_geometry(m) for m in self.gui.meshes
         ]
         
-        [print(g["name"],", ",g["layers"]) for g in part_geoms]
+        # [print(g["name"],", ",g["layers"]) for g in part_geoms]
 
         work_offset = self.gui.work_offset_var.get()
         pause_l = 1 if self.gui.pause_after_layer_var.get() else 0
@@ -228,7 +229,7 @@ class FabriSlicer:
         
         for g in part_geoms:
             g|=print_stats 
-            print(g)
+            # print(g)
             
         gcode_out = ""
 

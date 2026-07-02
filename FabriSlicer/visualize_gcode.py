@@ -224,11 +224,11 @@ class GCodeInterpreter:
                     self.path.append(
                         (self.pos["X"], self.pos["Y"], self.pos["Z"], move_type)
                     )
-                    print(f"Movement: X={self.pos['X']:.4f}, Y={self.pos['Y']:.4f}, Z={self.pos['Z']:.4f} | Type: {move_type}")
+                    # print(f"Movement: X={self.pos['X']:.4f}, Y={self.pos['Y']:.4f}, Z={self.pos['Z']:.4f} | Type: {move_type}")
 
     def render_on_axes(self, ax):
         if len(self.path) <= 1:
-            print("Warning: No movement commands were found or executed.")
+            # print("Warning: No movement commands were found or executed.")
             return [], [], {}, 0
 
         # Subtract spindle offsets to plot the true printhead coordinates
@@ -390,12 +390,12 @@ def visualize_gcode_3d(filepath = None, data = None):
     else:
         raise ValueError("No file or data found. wtf?")
 
-    print("Simulating...")
+    # print("Simulating...")
     sim = GCodeInterpreter(lines)
     sim.run()
     
     if len(sim.path) <= 1:
-        print("Warning: No movement commands were found or executed.")
+        # print("Warning: No movement commands were found or executed.")
         return
         
     fig = plt.figure(figsize=(12, 10))
@@ -403,7 +403,7 @@ def visualize_gcode_3d(filepath = None, data = None):
     ax = fig.add_subplot(111, projection='3d')
     
     rendered_elements, weld_z_values, time_to_layer_map, global_move_idx = sim.render_on_axes(ax)
-    print(f"Simulation complete. Found {len(weld_z_values)} active layers.")
+    # print(f"Simulation complete. Found {len(weld_z_values)} active layers.")
         
     def on_scroll(event):
         if event.inaxes != ax: return

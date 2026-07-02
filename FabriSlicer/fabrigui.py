@@ -40,6 +40,12 @@ class FabriGui(tk.Tk):
         super().__init__()
         self.withdraw()
         self.title("UTS FabriSlicer")
+        
+        icon_path = os.path.join(os.path.dirname(__file__), 'icon', 'slicer_icon.png')
+        if os.path.exists(icon_path):
+            icon_img = tk.PhotoImage(file=icon_path)
+            self.iconphoto(True, icon_img)
+            
         self.geometry('900x600') #600*400
         self.resizable(True,True)
         self._window_width = 900
