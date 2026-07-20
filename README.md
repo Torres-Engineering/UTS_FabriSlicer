@@ -1,4 +1,4 @@
-# FabriSlicer v1
+# FabriSlicer
 
 FabriSlicer is a custom GUI slicer tool designed for generating toolpaths and GCODE for the FabriSonic Soniclayer 1200 at UTS. It allows you to import STL files, customize build dimensions, apply offsets, and generate ready-to-run GCODE files with custom weld and texturising speeds.
 
